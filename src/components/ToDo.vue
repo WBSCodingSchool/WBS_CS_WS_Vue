@@ -1,6 +1,6 @@
 <template>
   <h1 class="text-center">{{title}}</h1>
-  <form>
+  <form  v-on:submit.prevent="addToDo">
   <div class="form-group">
     <label for="to-do">What do you want to do?</label>
     <input type="text" class="form-control" id="to-do" placeholder="Enter task">
@@ -12,9 +12,17 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'ToDo',
   props: {
     title: String
+  },
+  setup(){
+    const addToDo = () => {
+      console.log('Hello')
+    }
+    return{
+      addToDo
+    }
   }
 }
 </script>
