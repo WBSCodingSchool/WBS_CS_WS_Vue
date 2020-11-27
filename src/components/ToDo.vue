@@ -7,6 +7,11 @@
     <small id="emailHelp" class="form-text text-muted">You actually need to do it 🙃</small>
   </div>
   <button type="submit" class="btn btn-primary">Add</button>
+  <div>
+    <ul v-for="todo in todos" v-bind:key="todo.id">
+      <li>{{todo.task}}</li>
+    </ul>
+  </div>
 </form>
 </template>
 
@@ -20,12 +25,15 @@ export default {
   },
   setup(){
     const newToDo = ref('');
+    const todos = ref([]);
 
     const addToDo = () => {
-      console.log(newToDo.value)
+     todos.value.push({id: Date.now(), task: newToDo.value, done: false});
+     newToDo.value = '';
     }
     return{
       newToDo,
+      todos,
       addToDo
     }
   }
