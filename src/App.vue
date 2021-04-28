@@ -1,16 +1,14 @@
 <template>
-  <div class="container">
-    <ToDo title="ToDo App (but with Vue)"/>
-  </div>
+  <ToDo title="ToDo app with Vue 3" />
 </template>
 
 <script>
-import ToDo from './components/ToDo'
+import ToDo from './components/ToDo.vue';
 
 export default {
   name: 'App',
   components: {
     ToDo
   }
-}
+};
 </script>
